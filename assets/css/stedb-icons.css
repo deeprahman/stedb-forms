@@ -1,0 +1,150 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: "stedb-icons";
+    src: url("../fonts/stedb-icons.eot");
+    src: url("../fonts/stedb-icons.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/stedb-icons.woff") format("woff"),
+    url("../fonts/stedb-icons.ttf") format("truetype"),
+    url("../fonts/stedb-icons.svg#stedb-icons") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+[data-stedb-icon]:before {
+    font-family: "stedb-icons" !important;
+    content: attr(data-icon);
+    font-style: normal !important;
+    font-weight: normal !important;
+    font-variant: normal !important;
+    text-transform: none !important;
+    speak: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="stedb-icon-"]:before,
+[class*=" stedb-icon-"]:before {
+    font-family: "stedb-icons" !important;
+    font-style: normal !important;
+    font-weight: normal !important;
+    font-variant: normal !important;
+    text-transform: none !important;
+    speak: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.stedb-icon-account-id:before {
+    content: "\61";
+}
+
+.stedb-icon-add:before {
+    content: "\62";
+}
+
+.stedb-icon-row-add:before {
+    content: "\63";
+}
+
+.stedb-icon-align:before {
+    content: "\64";
+}
+
+.stedb-icon-auto-response:before {
+    content: "\65";
+}
+
+.stedb-icon-calendar:before {
+    content: "\66";
+}
+
+.stedb-icon-checkbox:before {
+    content: "\67";
+}
+
+.stedb-icon-close:before {
+    content: "\68";
+}
+
+.stedb-icon-code:before {
+    content: "\69";
+}
+
+.stedb-icon-copy:before {
+    content: "\6a";
+}
+
+.stedb-icon-date:before {
+    content: "\6b";
+}
+
+.stedb-icon-delete:before {
+    content: "\6c";
+}
+
+.stedb-icon-dropdown:before {
+    content: "\6d";
+}
+
+.stedb-icon-edit:before {
+    content: "\6e";
+}
+
+.stedb-icon-email:before {
+    content: "\6f";
+}
+
+.stedb-icon-hashtag:before {
+    content: "\70";
+}
+
+.stedb-icon-link:before {
+    content: "\71";
+}
+
+.stedb-icon-option:before {
+    content: "\72";
+}
+
+.stedb-icon-phone:before {
+    content: "\73";
+}
+
+.stedb-icon-radio:before {
+    content: "\74";
+}
+
+.stedb-icon-send:before {
+    content: "\75";
+}
+
+.stedb-icon-settings:before {
+    content: "\76";
+}
+
+.stedb-icon-swap:before {
+    content: "\77";
+}
+
+.stedb-icon-text:before {
+    content: "\78";
+}
+
+.stedb-icon-textarea:before {
+    content: "\79";
+}
+
+.stedb-icon-check:before {
+    content: "\7a";
+}
+
+.stedb-icon-time:before {
+    content: "\41";
+}
+
+.stedb-icon-view:before {
+    content: "\42";
+}

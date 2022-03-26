@@ -1,0 +1,136 @@
+.stedb-form .stedb-forms-row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -10px;
+    margin-left: -10px;
+}
+
+.stedb-form .stedb-forms-field,
+.stedb-form .stedb-forms-social-field {
+    position: relative;
+    width: 100%;
+    -ms-flex-preferred-size: 0;
+    flex-basis: 0;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    max-width: 100%;
+    margin: 10px;
+}
+
+.stedb-form .stedb-forms-field label.stedb-forms-checkbox,
+.stedb-form .stedb-forms-field label.stedb-forms-radio {
+    font-weight: normal;
+}
+
+.stedb-form .stedb-forms-field input.stedb-forms-input-date,
+.stedb-form .stedb-forms-field input.stedb-forms-input-number,
+.stedb-form .stedb-forms-field input.stedb-forms-input-text,
+.stedb-form .stedb-forms-field input.stedb-forms-input-url,
+.stedb-form .stedb-forms-field select.stedb-forms-select,
+.stedb-form .stedb-forms-field textarea.stedb-forms-textarea {
+    width: 100%;
+}
+
+.stedb-form .stedb-forms-social-field {
+    background-color: #eeeeee;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    display: flex;
+    padding: 10px;
+    box-shadow: none !important;
+    cursor: pointer;
+}
+
+.stedb-form .stedb-forms-social-field-social_gmail {
+    background-color: #fff5f4;
+    border-color: #df4b38;
+    color: #df4b38 !important;
+}
+
+.stedb-form .stedb-forms-social-field-social_gmail:focus,
+.stedb-form .stedb-forms-social-field-social_gmail:hover {
+    background-color: #ffe8e5;
+    border-color: #db422f;
+    color: #db422f !important;
+}
+
+.stedb-form .stedb-forms-social-field-social_yahoo {
+    background-color: #f8f2fa;
+    border-color: #6b3695;
+    color: #6b3695 !important;
+}
+
+.stedb-form .stedb-forms-social-field-social_yahoo:focus,
+.stedb-form .stedb-forms-social-field-social_yahoo:hover {
+    background-color: #f5e3fa;
+    border-color: #5f2a89;
+    color: #5f2a89 !important;
+}
+
+.stedb-form .stedb-forms-social-field-social_linkedin {
+    background-color: #f2f8fb;
+    border-color: #117bb8;
+    color: #117bb8 !important;
+}
+
+.stedb-form .stedb-forms-social-field-social_linkedin:focus,
+.stedb-form .stedb-forms-social-field-social_linkedin:hover {
+    background-color: #e1f2fa;
+    border-color: #0974b1;
+    color: #0974b1 !important;
+}
+
+.stedb-form .stedb-forms-social-field .stedb-forms-social-field-icon img {
+    vertical-align: middle;
+    border-style: none;
+    box-shadow: none;
+}
+
+.stedb-form .stedb-forms-social-field .stedb-forms-social-field-text {
+    -ms-flex-item-align: center !important;
+    align-self: center !important;
+    margin-left: 10px;
+    font-size: 14px;
+}
+
+.stedb-forms-alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.stedb-forms-alert-success {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+}
+
+.stedb-forms-alert-danger {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+}
+
+.stedb-forms-type--popup-default {
+    position: relative;
+    background: #eee;
+    padding: 30px 25px;
+    min-width: 350px;
+    width: auto;
+    max-width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.stedb-forms-type--popup-sidebar-right {
+    position: relative;
+    background: #eee;
+    padding: 30px 25px;
+    min-width: 350px;
+    width: auto;
+    max-width: 500px;
+    float: right;
+}
