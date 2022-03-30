@@ -20,6 +20,7 @@ define('STEDB_FORMS_DEBUG', 1);
 if (STEDB_FORMS_DEBUG && file_exists(STEDB_FORMS_DIR_PATH . '/debug_config.php')) {
 	include_once STEDB_FORMS_DIR_PATH . '/debug_config.php';
 }
+
 /**
  * Includes
  * classes
@@ -29,7 +30,22 @@ include_once STEDB_FORMS_DIR_PATH . '/includes/class-stedb-forms-wordpress-base.
 include_once STEDB_FORMS_DIR_PATH . '/includes/class-stedb-forms-wordpress-admin.php';
 include_once STEDB_FORMS_DIR_PATH . '/includes/class-stedb-forms-wordpress-public.php';
 
+/**
+ * Logger
+ */
+if (!function_exists('write_log')) {
 
+    function write_log($log) {
+        if (true === WP_DEBUG) {
+            if (is_array($log) || is_object($log)) {
+                error_log(print_r($log, true));
+            } else {
+                error_log($log);
+            }
+        }
+    }
+
+}
 
 /**
  * Language

@@ -103,8 +103,7 @@ class STEDB_Forms_Api_Client {
 			/** format data */
 			$data = json_encode( $data );
 		}
-
-		write_log($data);
+		
 		/** send request */
 		$response = wp_remote_request( $request_url, array(
 			'method'    => $method,
@@ -114,6 +113,11 @@ class STEDB_Forms_Api_Client {
 			'headers'   => $headers,
 			'body'      => $data,
 		) );
+		write_log(PHP_EOL . "Sent Data:");
+		write_log($data);
+		write_log(PHP_EOL . "Start Response");
+		write_log($data);
+		write_log(PHP_EOL . "End of Response");
 		/** return response */
 		if ( ! is_wp_error( $response ) ) {
 
