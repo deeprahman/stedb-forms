@@ -2,7 +2,6 @@
 	"settings": {
         "files.exclude": {
 			"**/wp-content": true,
-			"**/api": true,
 		}
     },
 	"folders": [
@@ -18,11 +17,6 @@
 		{
 			"name": "DBM",
 			"path": "/opt/dbm9x",
-			
-		},
-		{
-			"name": "API",
-			"path": "/opt/dbm9x/api",
 			
 		}
 	]

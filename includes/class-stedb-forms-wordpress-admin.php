@@ -1727,7 +1727,8 @@ if ( ! class_exists( 'STEDB_Forms_WordPress_Admin' ) ) {
 
 			/** check base url */
 			if ( ! isset( $old_account['base_url'] ) ) {
-				$new_account['base_url'] = 'https://opt4.stedb.com/dbm9x/api/';
+				// $new_account['base_url'] = 'https://opt4.stedb.com/dbm9x/api/';
+				$new_account['base_url'] = STEDB_API_URL;
 			} else {
 				$new_account['base_url'] = $old_account['base_url'];
 			}
