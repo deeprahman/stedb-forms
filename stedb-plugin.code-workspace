@@ -1,0 +1,29 @@
+{
+	"settings": {
+        "files.exclude": {
+			"**/wp-content": true,
+			"**/api": true,
+		}
+    },
+	"folders": [
+		{
+			"name": "stedb-forms plugin",
+			"path": "."
+		},
+		{
+			"name": "Wordpress",
+			"path": "/var/www/test.deeprahman.lo",
+			
+		},
+		{
+			"name": "DBM",
+			"path": "/opt/dbm9x",
+			
+		},
+		{
+			"name": "API",
+			"path": "/opt/dbm9x/api",
+			
+		}
+	]
+}
