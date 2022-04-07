@@ -116,7 +116,7 @@ class STEDB_Forms_Api_Client {
 		write_log(PHP_EOL . "Sent Data:");
 		write_log($data);
 		write_log(PHP_EOL . "Start Response");
-		write_log($data);
+		write_log($response);
 		write_log(PHP_EOL . "End of Response");
 		/** return response */
 		if ( ! is_wp_error( $response ) ) {
@@ -305,7 +305,7 @@ class STEDB_Forms_Api_Client {
 
 		/** change name to list_name (due to wpdb structure) */
 		if ( array_key_exists( 'name', $data ) ) {
-			$data['list_name'] = $data['name'];
+			// $data['list_name'] = $data['name']; // BUG: This is creation problem
 		}
 
 		/** change form_builder_content to extra_data (due to wpdb structure) */
@@ -313,7 +313,9 @@ class STEDB_Forms_Api_Client {
 			$data['extra_data'] = $data['form_builder_content'];
 		}
 
-		return array_intersect_key( $data, array_flip( array( 'id', 'list_name', 'receiver', 'extra_data' ) ) );
+		// BUG: This is creation problem; change list_name to name
+		// return array_intersect_key( $data, array_flip( array( 'id', 'list_name', 'receiver', 'extra_data' ) ) );
+		return array_intersect_key( $data, array_flip( array( 'id', 'name', 'receiver', 'extra_data' ) ) );
 	}
 
 	/**
