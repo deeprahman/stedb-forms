@@ -6,7 +6,7 @@ if(isset($_SERVER['HTTP_HOST'])){
   if(in_array($host, array('local', '127.0', '192.1','dev.d','dbm.d','wp.dee'))){
      define ('STEDB_FORMS_API_CALL', FALSE);
   }else{
-     define('DEBUG', FALSE);
+     define('DEBUG', TRUE);
   }
 }
 $account = array (
