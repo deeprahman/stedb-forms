@@ -3,7 +3,7 @@
 $stedb_forms_account = get_option( 'stedb_forms_account', array() );
 if(isset($_SERVER['HTTP_HOST'])){
   $host = substr($_SERVER['HTTP_HOST'], 0, 5);
-  if(in_array($host, array('local', '127.0', '192.1','dev.d','dbm.d'))){
+  if(in_array($host, array('local', '127.0', '192.1','wp.de','dbm.d'))){
      define('DEBUG', TRUE);
      define ('REMOTE', TRUE);
   }else{
