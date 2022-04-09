@@ -305,7 +305,7 @@ class STEDB_Forms_Api_Client {
 
 		/** change name to list_name (due to wpdb structure) */
 		if ( array_key_exists( 'name', $data ) ) {
-			// $data['list_name'] = $data['name']; // BUG: This is creation problem
+			// $data['list_name'] = $data['name']; // DEBUG: This is creation problem
 		}
 
 		/** change form_builder_content to extra_data (due to wpdb structure) */
@@ -313,7 +313,7 @@ class STEDB_Forms_Api_Client {
 			$data['extra_data'] = $data['form_builder_content'];
 		}
 
-		// BUG: This is creation problem; change list_name to name
+		// DEBUG: This is creation problem; change list_name to name
 		// return array_intersect_key( $data, array_flip( array( 'id', 'list_name', 'receiver', 'extra_data' ) ) );
 		return array_intersect_key( $data, array_flip( array( 'id', 'name', 'receiver', 'extra_data' ) ) );
 	}
@@ -370,10 +370,14 @@ class STEDB_Forms_Api_Client {
 	public function filter_fields_data( $data ) {
 
 		/** change name to field_name (due to wpdb structure) */
-		if ( array_key_exists( 'name', $data ) ) {
+		if ( array_key_exists( 'name', $data ) ) {  // DEBUG: There is no field  named "field_name" at https://opt4.stedb.com/dbm9x/api/fields/ end point as per the documnetaion
 			$data['field_name'] = $data['name'];
 		}
-
+		// NOTE: This is my code
+		if ( array_key_exists( 'label', $data['values'] ) ) {
+			// $data['field_name'] = $data['values']['label'];
+			$data['name'] = $data['values']['label'];
+		}
 		/** change type to field_type (due to wpdb structure) */
 		if ( array_key_exists( 'type', $data ) ) {
 			$data['field_type'] = $data['type'];
