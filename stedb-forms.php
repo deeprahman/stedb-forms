@@ -112,7 +112,7 @@ function stedb_forms_create_wpdb_tables()
 	/** create entries table */
 	$wpdb->query("CREATE TABLE IF NOT EXISTS " . $wpdb->prefix . 'stedb_forms_entries' . " (
 		`id` bigint(20) NOT NULL auto_increment,
-		`entry_id` bigint(20) NOT NULL 'for stedb api',
+		`entry_id` bigint(20) NOT NULL COMMENT 'or stedb api',
 		`form_id` bigint(20) NOT NULL,
 		`email` varchar(255) NOT NULL,
 		`custom_fields` text,

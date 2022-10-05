@@ -113,10 +113,11 @@ class STEDB_Forms_Api_Client {
 			'headers'   => $headers,
 			'body'      => $data,
 		) );
+		// TODO: check if debug_mode is on
 		write_log(PHP_EOL . "Sent Data:");
 		write_log($data);
 		write_log(PHP_EOL . "Start Response");
-		write_log($data);
+		write_log($response);
 		write_log(PHP_EOL . "End of Response");
 		/** return response */
 		if ( ! is_wp_error( $response ) ) {
