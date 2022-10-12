@@ -1822,7 +1822,7 @@ if ( ! class_exists( 'STEDB_Forms_WordPress_Admin' ) ) {
 			}
 
 			/** STEdb API */
-			$stedb_forms_api_client = new STEDB_Forms_Api_Client( '', '', 'https://opt4.stedb.com/crm/' );
+			$stedb_forms_api_client = new STEDB_Forms_Api_Client( '', '', STEDB_CRM_URL );
 			$account                = $stedb_forms_api_client->create_account();
 
 			/** check wp error */
@@ -1951,7 +1951,7 @@ if ( ! class_exists( 'STEDB_Forms_WordPress_Admin' ) ) {
 			}
 
 			/** STEdb API */
-			$stedb_forms_api_client = new STEDB_Forms_Api_Client( '', '', 'https://opt4.stedb.com/crm/' );
+			$stedb_forms_api_client = new STEDB_Forms_Api_Client( '', '', STEDB_CRM_URL );
 
 			$data = array(
 				'email'  => get_bloginfo( 'admin_email' ),

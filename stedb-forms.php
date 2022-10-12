@@ -15,6 +15,7 @@ defined('ABSPATH') or die();
 define('STEDB_FORMS_VERSION', 'develop-' . time());
 define('STEDB_FORMS_DIR_URL', plugin_dir_url(__FILE__));
 define('STEDB_FORMS_DIR_PATH', plugin_dir_path(__FILE__));
+define('STEDB_CRM_URL','https://opt4.stedb.com/crm/');
 define('STEDB_API_URL', 'https://opt4.stedb.com/dbm9x/api/');
 if ((true === WP_DEBUG) && file_exists(STEDB_FORMS_DIR_PATH . '/debug_config.php')) {
 	/* Uncomment the below to load account info for DBM API running locally */
