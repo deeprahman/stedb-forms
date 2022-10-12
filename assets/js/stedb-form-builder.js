@@ -13,7 +13,7 @@ var STEdbFormBuilder;
 var STEdbFormElement;
 var STEdbFormElementRow;
 var STEdbFormElementField;
-
+debugger;
 /** Create jQuery anonymous function */
 (function ($) {
 
@@ -133,6 +133,7 @@ var STEdbFormElementField;
          * @returns {Function}
          */
         template: function (id) {
+            
             return _.template($('#tmpl-stedb-forms-' + id).html(), this.options.underscoreTemplate);
         },
         /**
@@ -278,6 +279,7 @@ var STEdbFormElementField;
          * @param form_builder_content
          */
         initContent: function (form_builder_content) {
+
             var rowTemplate = this.elements.row.template('html'),
                 fieldTemplate,
                 rowIds = [0], fieldIds = [0];
@@ -418,6 +420,7 @@ var STEdbFormElementField;
          * @returns {*}
          */
         proxyEvent: function (callback) {
+
             return this.proxy(function (e) {
                 var args, extraArgs, eventArgs;
 
@@ -565,6 +568,7 @@ var STEdbFormElementField;
          * @returns {Function}
          */
         template: function (id) {
+
             return _.template($('#tmpl-stedb-forms-admin-element-' + this.options.templateName + '-' + id).html(), this.stedbFormBuilder.options.underscoreTemplate);
         },
         /**
@@ -926,7 +930,7 @@ var STEdbFormElementField;
             }
             return obj;
         }
-    }
+    };
 
     /**
      * STEdb Forms - Element Row
@@ -1068,6 +1072,7 @@ var STEdbFormElementField;
          * @returns {string}
          */
         draggableHelper: function (e) {
+
             var htmlTemplate = this.template('html');
 
             return htmlTemplate({});
@@ -1173,11 +1178,19 @@ var STEdbFormElementField;
          * @returns {*}
          */
         addElement: function ($element, $containerElement) {
+
             var elements = this.stedbFormBuilder.elements,
                 rowId = $containerElement.closest(elements.row.selector).data('id'),
                 fieldId = this.options.id++,
                 fieldElement = this.getFieldTypeElement($element.data('type')),
                 htmlTemplate = this.template($element.data('type') + '-html');
+
+            debugger;
+            var dbg =htmlTemplate($.extend({}, {
+                rowId: rowId,
+                fieldId: fieldId,
+                fieldType: $element.data('type')
+            }, fieldElement.options.templateDefaultData));
 
             /** set html */
             $element.replaceWith($(htmlTemplate($.extend({}, {
@@ -1345,6 +1358,7 @@ var STEdbFormElementField;
                 fieldElement = this.getFieldTypeElement($element.data('type')),
                 htmlTemplate = this.template($element.data('type') + '-html');
 
+               
             return htmlTemplate($.extend({}, {
                 fieldType: $element.data('type')
             }, fieldElement.options.templateDefaultData));

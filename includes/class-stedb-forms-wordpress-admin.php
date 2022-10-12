@@ -2052,7 +2052,7 @@ if ( ! class_exists( 'STEDB_Forms_WordPress_Admin' ) ) {
 		 */
 		public function admin_post_add_form() {
 			global $wpdb;
-
+			write_log($_POST); // TODO: remove after debugging
 			/**
 			 * get form url
 			 * @var string $form_url
