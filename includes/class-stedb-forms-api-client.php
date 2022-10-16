@@ -97,7 +97,7 @@ class STEDB_Forms_Api_Client {
 		}
 
 		/** PUT method */
-		if ( 'PUT' == $method ) {
+		if ( 'PUT' == $method || 'POST' == $method || 'DELETE' == $method || 'PATCH' == $method) {
 			$headers['Content-Type'] = 'application/json';
 
 			/** format data */
@@ -105,15 +105,16 @@ class STEDB_Forms_Api_Client {
 		}
 		
 		/** send request */
-		$response = wp_remote_request( $request_url, array(
+		$http_request_args = array(
 			'method'    => $method,
-			'timeout'   => 60,
+			'timeout'   => 10,
 			'sslverify' => false, //todo: check ssl verify
 			'blocking'  => true,
 			'headers'   => $headers,
 			'body'      => $data,
-		) );
-		// TODO: check if debug_mode is on
+		);
+		$response = wp_remote_request( $request_url,  $http_request_args);
+		write_log("Request URL: ". $request_url);
 		write_log(PHP_EOL . "Sent Data:");
 		write_log($data);
 		write_log(PHP_EOL . "Start Response");
