@@ -58,18 +58,18 @@ if ( ! class_exists( 'STEDB_Forms_WordPress_Admin' ) ) {
 			add_action( 'admin_title', array( $this, 'edit_entry_admin_title' ) );
 
 			/** option filter */
-			add_filter( 'pre_update_option_stedb_forms_account', array(
-				$this,
-				'update_option_stedb_forms_account',
-			), 10, 2 );
+			#add_filter( 'pre_update_option_stedb_forms_account', array(
+			#	$this,
+			#	'update_option_stedb_forms_account',
+			#), 10, 2 );
 
-			/** check has account */
-			if ( $this->has_account() ) {
-				add_filter( 'pre_update_option_stedb_forms_account_address', array(
-					$this,
-					'update_option_stedb_forms_account_address',
-				), 10, 2 );
-			}
+			#/** check has account */
+			#if ( $this->has_account() ) {
+			#	add_filter( 'pre_update_option_stedb_forms_account_address', array(
+			#		$this,
+			#		'update_option_stedb_forms_account_address',
+			#	), 10, 2 );
+			#}
 
 			/** admin post */
 			//todo: remove debug
@@ -1678,43 +1678,44 @@ if ( ! class_exists( 'STEDB_Forms_WordPress_Admin' ) ) {
 		}
 
 		/**
-		 * Has account?
+		 * Has account?  NOTE: Currently return true
 		 * @return bool
 		 */
 		public function has_account() {
+			#// TODO: Remove this
+			#/** account form option */
+			#$stedb_forms_account = get_option( 'stedb_forms_account', array() );
 
-			/** account form option */
-			$stedb_forms_account = get_option( 'stedb_forms_account', array() );
+			#/** check array */
+			#if ( empty( $stedb_forms_account ) ) {
+			#	return false;
+			#}
 
-			/** check array */
-			if ( empty( $stedb_forms_account ) ) {
-				return false;
-			}
+			#/** check array */
+			#if ( ! is_array( $stedb_forms_account ) ) {
+			#	return false;
+			#}
 
-			/** check array */
-			if ( ! is_array( $stedb_forms_account ) ) {
-				return false;
-			}
+			#/**
+			# * check account vars
+			# */
+			#$required_account_vars = array( 'user_id', 'secret' );
 
-			/**
-			 * check account vars
-			 */
-			$required_account_vars = array( 'user_id', 'secret' );
+			#if ( count( array_intersect_key( array_flip( $required_account_vars ), $stedb_forms_account ) ) !== count( $required_account_vars ) ) {
+			#	return false;
+			#}
 
-			if ( count( array_intersect_key( array_flip( $required_account_vars ), $stedb_forms_account ) ) !== count( $required_account_vars ) ) {
-				return false;
-			}
+			#/**
+			# * has account function
+			# * @var bool $has_account
+			# */
+			#$has_account = in_array( false, array_map( function ( $a ) {
+			#	return ! empty( $a );
+			#}, $stedb_forms_account ) );
 
-			/**
-			 * has account function
-			 * @var bool $has_account
-			 */
-			$has_account = in_array( false, array_map( function ( $a ) {
-				return ! empty( $a );
-			}, $stedb_forms_account ) );
-
-			/** return bool */
-			return ( ! $has_account );
+			#/** return bool */
+			#return ( ! $has_account );
+            return true;
 		}
 
 		/**
